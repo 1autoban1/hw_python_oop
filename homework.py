@@ -89,8 +89,8 @@ class SportsWalking(Training):
 class Swimming(Training):
     """Тренировка: плавание."""
     LEN_STEP: float = 1.38
-    coeff_calorie_1 = 1.1
-    coeff_calorie_2 = 2
+    coeff_calorie_1: float = 1.1
+    coeff_calorie_2: float = 2
 
     def __init__(self,
                  action: int,
