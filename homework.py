@@ -1,4 +1,4 @@
-from typing import ClassVar, Type
+from typing import ClassVar, Dict, Type
 from dataclasses import asdict, dataclass
 
 
@@ -111,7 +111,7 @@ class Swimming(Training):
                 * self.coeff_calorie_2 * self.weight)
 
 
-read_workout_type: dict[str, Type[Training]] = {'SWM': Swimming,
+read_workout_type: Dict[str, Type[Training]] = {'SWM': Swimming,
                                                 'RUN': Running,
                                                 'WLK': SportsWalking}
 
@@ -123,7 +123,6 @@ def read_package(workout_type: str, data: list) -> Training:
     except KeyError as error_message:
         error_message: str = 'Тип тренировки не соответствует ожидаемому'
         print(error_message)
-        return None
 
 
 def main(training: Training) -> None:
