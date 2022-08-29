@@ -120,7 +120,7 @@ def read_package(workout_type: str, data: list) -> Training:
     """Прочитать данные полученные от датчиков."""
     try:
         return read_workout_type[workout_type](*data)
-    except TypeError as error_message:
+    except KeyError as error_message:
         error_message: str = 'Тип тренировки не соответствует ожидаемому'
         print(error_message)
         return None
